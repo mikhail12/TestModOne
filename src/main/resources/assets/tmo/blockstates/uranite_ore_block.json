@@ -1,0 +1,6 @@
+{
+  "variants": {
+    "": { "model": "tmo:block/uranite_ore_block" },
+    "radioactivity": "Math.random() * 1.5"
+  }
+}
