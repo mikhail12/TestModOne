@@ -10,6 +10,7 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.multiplayer.ClientChunkProvider;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.World;
 import net.minecraft.world.chunk.AbstractChunkProvider;
 import net.minecraft.world.chunk.Chunk;
 import net.minecraftforge.api.distmarker.Dist;
@@ -81,15 +82,14 @@ public class ModClientEvents {
         }
     }
     private static void oreLocator() {
-
+        final AbstractChunkProvider chunkProvider = null;
         // Get the ChunkProviderClient from WorldClient
         try {
-            AbstractChunkProvider chunkProvider = Minecraft.getInstance().world.getChunkProvider();
         } catch(NullPointerException e){
             System.err.println("Yep, restart, its a NullPointerException:"+e);
         }
         // Get the list of all loaded chunks.
-        List<?> chunks = ChunkUtils.stealAndGetField((Object)chunkProvider, List.class);
+        List<?> chunks = ChunkUtils.stealAndGetField(chunkProvider, List.class);
 
 
         for (Object chunk : chunks) {
