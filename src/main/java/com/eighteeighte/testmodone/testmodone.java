@@ -46,4 +46,5 @@ public class testmodone
             return new ItemStack(RegistryHandler.URANITE_ORE_BLOCK.get());
         }
     };
+
 }

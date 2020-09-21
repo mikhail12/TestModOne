@@ -13,8 +13,9 @@ import net.minecraft.util.registry.Registry;
 
 public class DamageSourceRadioactive extends Effect {
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
     }
+
     public DamageSourceRadioactive(EffectType typeIn, int liquidColorIn) {
         super(typeIn, liquidColorIn);
     }
@@ -26,11 +27,9 @@ public class DamageSourceRadioactive extends Effect {
     public static void performEffect() {
     }
 
-    @Override
-    public void performEffect(LivingEntity entityLivingBaseIn, int amplifier) {
+    public static void doEffect(LivingEntity entityLivingBaseIn, int amplifier) {
         if (entityLivingBaseIn.getHealth() > 1.0F) {
-                entityLivingBaseIn.attackEntityFrom(DamageSource.MAGIC, 1.0F);
+            entityLivingBaseIn.attackEntityFrom(DamageSource.MAGIC, 0.1F);
         }
     }
 }
-
